@@ -1,0 +1,69 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Forethought Solve API — Metadata
+  description: 'Forethought Solve API — Metadata. 1 operation. Lead operation: List Solve Workspace Metadata. Self-contained Naftiko capability covering one Forethought business surface.'
+  tags:
+  - Forethought
+  - Solve
+  - Metadata
+  created: '2026-05-24'
+  modified: '2026-05-24'
+binds:
+- namespace: env
+  keys:
+    FORETHOUGHT_SOLVE_TOKEN: FORETHOUGHT_SOLVE_TOKEN
+capability:
+  consumes:
+  - type: http
+    namespace: solve-metadata
+    baseUri: https://app.forethought.ai
+    description: Forethought Solve API — Metadata business capability. Self-contained, no shared references.
+    resources:
+    - name: solve-metadata
+      path: /solve/api/v1/metadata
+      operations:
+      - name: getmetadata
+        method: GET
+        description: List Solve Workspace Metadata
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      value: '{{env.FORETHOUGHT_SOLVE_TOKEN}}'
+      placement: header
+  exposes:
+  - type: rest
+    namespace: solve-metadata-rest
+    port: 8080
+    description: REST adapter for Forethought Solve API — Metadata. One Spectral-compliant resource per consumed operation, prefixed with /v1.
+    resources:
+    - path: /v1/solve/metadata
+      name: solve-metadata
+      description: REST surface for solve-metadata.
+      operations:
+      - method: GET
+        name: getmetadata
+        description: List Solve Workspace Metadata
+        call: solve-metadata.getmetadata
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: solve-metadata-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Forethought Solve API — Metadata.
+    tools:
+    - name: forethought-list-solve-metadata
+      description: List Solve Workspace Metadata
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: solve-metadata.getmetadata
+      outputParameters:
+      - type: object
+        mapping: $.

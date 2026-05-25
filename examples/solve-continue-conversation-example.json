@@ -1,0 +1,24 @@
+{
+  "request": {
+    "method": "PUT",
+    "url": "https://app.forethought.ai/solve/api/v1/conversation/conv_01HBXY7K9P3MR2Z4A8F0W6N2QV",
+    "headers": {
+      "Authorization": "Bearer {solve-api-token}",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "query": "Yes please."
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "conversation_id": "conv_01HBXY7K9P3MR2Z4A8F0W6N2QV",
+      "response": "Here is your tracking link: https://track.example.com/ORD-44219. Anything else?",
+      "is_solved": true,
+      "should_escalate": false,
+      "workflow_id": "wf_order_status",
+      "intent": "order_status"
+    }
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/forethought/main/json-schema/forethought-context-variable-schema.json",
+  "title": "Forethought Solve Context Variable",
+  "description": "A context variable available in a Forethought Solve workspace. Context variables are values passed into a Solve conversation to personalize responses or drive workflow branching.",
+  "type": "object",
+  "properties": {
+    "context_variable_id": {
+      "type": "string",
+      "description": "Stable identifier for the context variable."
+    },
+    "display_name": {
+      "type": "string",
+      "description": "Human-friendly variable label as shown in the Solve workbench."
+    },
+    "is_predefined": {
+      "type": "boolean",
+      "description": "True for variables built into Solve; false for workspace-defined variables."
+    },
+    "context_variable_type": {
+      "type": "string",
+      "enum": ["string", "number", "boolean", "list", "object"],
+      "description": "Data type of the variable's value."
+    }
+  },
+  "required": ["context_variable_id", "display_name", "context_variable_type"]
+}

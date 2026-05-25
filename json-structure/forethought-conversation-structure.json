@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-structure.org/draft/2025-01",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/forethought/main/json-structure/forethought-conversation-structure.json",
+  "title": "Forethought Solve Conversation Structure",
+  "description": "Structural breakdown of a Solve conversation document.",
+  "type": "object",
+  "name": "SolveConversation",
+  "fields": [
+    { "name": "conversation_id", "type": "string", "required": true, "identifier": true },
+    { "name": "user_id", "type": "string", "required": false },
+    { "name": "channel", "type": "enum", "values": ["chat", "email", "voice", "slack", "headless", "mobile"] },
+    { "name": "query", "type": "string", "required": true },
+    { "name": "response", "type": "string" },
+    { "name": "is_solved", "type": "boolean", "default": false },
+    { "name": "should_escalate", "type": "boolean", "default": false },
+    { "name": "workflow_id", "type": "string" },
+    { "name": "intent", "type": "string" },
+    { "name": "context_variables", "type": "map", "valueType": "any" },
+    { "name": "created_at", "type": "string", "format": "date-time" },
+    { "name": "updated_at", "type": "string", "format": "date-time" }
+  ]
+}

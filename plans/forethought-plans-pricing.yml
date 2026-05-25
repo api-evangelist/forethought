@@ -1,0 +1,143 @@
+specification: API Commons Plans
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
+provider: Forethought
+providerId: forethought
+created: '2026-05-24'
+modified: '2026-05-24'
+reconciled: false
+tags:
+  - AI
+  - Customer Support
+  - Generative AI
+  - SupportGPT
+description: |
+  Plan tiers for Forethought's generative AI customer-support platform. Exact
+  monetary pricing is not published; customers must contact Sales for a quote.
+  The Forethought API (Solve API, Triage API) is only included on the
+  Enterprise plan.
+sources:
+  - https://forethought.ai/pricing
+  - https://forethought.ai/platform
+plans:
+  - id: forethought-basic
+    name: Basic
+    type: tier
+    description: Enhance your efficiency with AI.
+    entries:
+      - label: Contact Sales for pricing
+        name: contact_sales
+        type: contact
+        metric: contact
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: Contact
+        userMultiplied: false
+    elements:
+      - name: AI agent for chat
+      - name: Autoflows and custom actions
+      - name: Insights dashboard
+      - name: Ready-to-use ticket triage models
+      - name: CSAT collection
+      - name: Security and compliance
+  - id: forethought-professional
+    name: Professional
+    type: tier
+    description: Elevate your support capabilities (most popular).
+    entries:
+      - label: Contact Sales for pricing
+        name: contact_sales
+        type: contact
+        metric: contact
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: Contact
+        userMultiplied: false
+    elements:
+      - name: Everything in Basic
+      - name: Omnichannel AI agent
+      - name: AI agents for multiple brands (2 brands)
+      - name: Advanced ticket insights
+      - name: AI conversation insights
+      - name: Custom ticket triage models (3 models)
+      - name: Multilingual support
+      - name: AI QA (1 rubric)
+  - id: forethought-enterprise
+    name: Enterprise
+    type: tier
+    description: The complete AI support solution. Includes the Forethought API.
+    entries:
+      - label: Contact Sales for pricing
+        name: contact_sales
+        type: contact
+        metric: contact
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: Contact
+        userMultiplied: false
+    elements:
+      - name: Everything in Professional
+      - name: Forethought API (Solve API and Triage API access)
+      - name: Knowledge-base gap detection and article creation
+      - name: Autoflow gap detection and generation
+      - name: AI agents for multiple brands (20 brands)
+      - name: Custom ticket triage models (6 models)
+      - name: AI QA (5 rubrics)
+      - name: Advanced security and compliance
+      - name: Advanced support
+  - id: forethought-assist-addon
+    name: Assist (Add-On)
+    type: addon
+    description: Agentic AI copilot for human agents.
+    entries:
+      - label: Contact Sales for pricing
+        name: contact_sales
+        type: contact
+        metric: contact
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: Contact
+        userMultiplied: false
+    elements:
+      - name: Ticket summaries
+      - name: Resolution guidance
+      - name: AI-generated replies
+  - id: forethought-agent-qa-addon
+    name: Agent QA (Add-On)
+    type: addon
+    description: Automated quality reviews of agent interactions.
+    entries:
+      - label: Contact Sales for pricing
+        name: contact_sales
+        type: contact
+        metric: contact
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: Contact
+        userMultiplied: false
+    elements:
+      - name: Automated quality reviews (5-20 rubrics)
+      - name: Performance dashboards
+      - name: Customizable QA framework
+  - id: forethought-for-slack-addon
+    name: Forethought for Slack (Add-On)
+    type: addon
+    description: Internal knowledge access via Slack.
+    entries:
+      - label: Contact Sales for pricing
+        name: contact_sales
+        type: contact
+        metric: contact
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: Contact
+        userMultiplied: false
+    elements:
+      - name: Company knowledge-base access from Slack
+      - name: Department enablement

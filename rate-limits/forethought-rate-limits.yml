@@ -1,0 +1,30 @@
+specification: API Commons Rate Limits
+specificationVersion: '0.1'
+schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/RateLimits
+provider: Forethought
+providerId: forethought
+created: '2026-05-24'
+modified: '2026-05-24'
+reconciled: false
+tags:
+  - AI
+  - Customer Support
+  - Rate Limiting
+description: |
+  Forethought does not publish per-tenant rate limits for the Solve API or
+  Triage API on its public help center. Bearer-token-scoped throttling is
+  enforced server-side and returned via standard HTTP 429 responses. Customers
+  should coordinate quota and burst limits with their Forethought Customer
+  Success Manager and Implementation Engineer at deployment time.
+sources:
+  - https://support.forethought.ai/hc/en-us/articles/31636750750227-Solve-API-Developer-Reference
+  - https://support.forethought.ai/hc/en-us/articles/26701042038419-Triage-API-Guide-for-Users
+responseCodes:
+  throttled: 429
+  quotaExceeded: 429
+algorithm: server-side
+notes:
+  - Per-tenant limits are tuned in coordination with Forethought Customer Success.
+  - Triage API is meant for synchronous classification at ticket-intake time; high-volume bulk classification should be discussed with Forethought.
+  - Solve API conversations should be paced to match real customer activity; concurrency limits apply per-bearer-token.
+limits: []

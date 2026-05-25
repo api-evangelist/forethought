@@ -1,0 +1,250 @@
+aid: forethought
+name: Forethought
+description: >-
+  Forethought is a San Francisco-based generative AI customer-support platform.
+  Its multi-agent product suite — Solve (omnichannel resolution), Triage
+  (ticket classification and routing), Discover (knowledge-gap detection and
+  article generation), Assist (agentic copilot for human agents), and Agent QA
+  (automated quality scoring) — is powered by SupportGPT, Forethought's
+  fine-tuned generative AI engine. The platform supports chat, email, voice,
+  Slack, mobile, and a Headless API channel, and integrates with Zendesk,
+  Salesforce, Intercom, Front, Gorgias, Genesys, Five9, LiveChat, and
+  knowledge sources including Notion, Document360, and Stonly. Forethought
+  exposes two public REST APIs on the Enterprise plan: the Solve API
+  (https://app.forethought.ai/solve/api/v1) for starting and continuing AI
+  conversations and inspecting workspace context variables, and the Triage API
+  (https://api.forethought.ai/api/predict) for classifying tickets against
+  customer-trained models. Public iOS and Android SDKs (Forethought-
+  Technologies/solve-ios, solve-android) embed Solve into mobile apps. The
+  Forethought engineering team also maintains AutoChain, an open-source
+  lightweight framework for building and testing LLM agents. Forethought is
+  now part of Zendesk.
+tags:
+  - AI
+  - Artificial Intelligence
+  - Customer Support
+  - Customer Service
+  - Generative AI
+  - SupportGPT
+  - Conversational AI
+  - Ticket Triage
+  - Agentic AI
+  - Voice AI
+  - Helpdesk
+  - Multi-Agent
+url: https://raw.githubusercontent.com/api-evangelist/forethought/refs/heads/main/apis.yml
+created: '2026-05-24'
+modified: '2026-05-24'
+specificationVersion: '0.20'
+kind: contract
+image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+access: 3rd-Party
+position: Consuming
+apis:
+  - aid: forethought:forethought-solve-api
+    name: Forethought Solve API
+    tags:
+      - AI
+      - Customer Support
+      - Solve
+      - Conversations
+      - Headless
+    humanURL: https://support.forethought.ai/hc/en-us/articles/31636750750227-Solve-API-Developer-Reference
+    properties:
+      - url: https://support.forethought.ai/hc/en-us/articles/31636750750227-Solve-API-Developer-Reference
+        type: Documentation
+      - url: openapi/forethought-solve-api-openapi.yml
+        type: OpenAPI
+      - url: json-schema/forethought-conversation-schema.json
+        type: JSONSchema
+      - url: json-schema/forethought-context-variable-schema.json
+        type: JSONSchema
+      - url: json-structure/forethought-conversation-structure.json
+        type: JSONStructure
+      - url: json-ld/forethought-context.jsonld
+        type: JSONLD
+      - url: capabilities/solve-conversations.yaml
+        type: NaftikoCapability
+      - url: capabilities/solve-metadata.yaml
+        type: NaftikoCapability
+      - url: examples/solve-start-conversation-example.json
+        type: Example
+      - url: examples/solve-continue-conversation-example.json
+        type: Example
+      - url: examples/solve-metadata-example.json
+        type: Example
+    description: >-
+      Headless REST API for the Solve omnichannel AI agent. Start a conversation
+      with a free-form customer query, continue the conversation with additional
+      turns or context-variable updates, and inspect the workspace's defined
+      context variables. Bearer-token authenticated against
+      app.forethought.ai/solve/api/v1.
+  - aid: forethought:forethought-triage-api
+    name: Forethought Triage API
+    tags:
+      - AI
+      - Customer Support
+      - Triage
+      - Classification
+      - Predictions
+    humanURL: https://support.forethought.ai/hc/en-us/articles/26701042038419-Triage-API-Guide-for-Users
+    properties:
+      - url: https://support.forethought.ai/hc/en-us/articles/26701042038419-Triage-API-Guide-for-Users
+        type: Documentation
+      - url: openapi/forethought-triage-api-openapi.yml
+        type: OpenAPI
+      - url: json-schema/forethought-triage-prediction-schema.json
+        type: JSONSchema
+      - url: json-structure/forethought-triage-prediction-structure.json
+        type: JSONStructure
+      - url: json-ld/forethought-context.jsonld
+        type: JSONLD
+      - url: capabilities/triage-predictions.yaml
+        type: NaftikoCapability
+      - url: examples/triage-predict-example.json
+        type: Example
+    description: >-
+      REST API for the Triage agent. POST a ticket subject (text_a) and body
+      (text_b) plus the model_name issued by Forethought, and receive ranked
+      predictions with confidence scores. Use to drive ticket routing,
+      auto-populated ticket fields, language detection, sentiment, or other
+      customer-trained labels.
+common:
+  - type: Website
+    url: https://forethought.ai
+  - type: Portal
+    url: https://forethought.ai/platform
+  - type: Documentation
+    url: https://support.forethought.ai/hc/en-us
+  - type: Documentation
+    url: https://support.forethought.ai/hc/en-us/articles/31636750750227-Solve-API-Developer-Reference
+    name: Solve API Developer Reference
+  - type: Documentation
+    url: https://support.forethought.ai/hc/en-us/articles/26701042038419-Triage-API-Guide-for-Users
+    name: Triage API Guide
+  - type: Pricing
+    url: https://forethought.ai/pricing
+  - type: Plans
+    url: plans/forethought-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/forethought-rate-limits.yml
+  - type: FinOps
+    url: finops/forethought-finops.yml
+  - type: Blog
+    url: https://forethought.ai/resource-center
+  - type: Blog
+    url: https://engineering.forethought.ai/blog/
+    name: Forethought AI Engineering Blog
+  - type: Careers
+    url: https://forethought.ai/careers
+  - type: Contact
+    url: https://forethought.ai/contact-us
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/forethought-ai
+  - type: Twitter
+    url: https://twitter.com/forethought_ai
+  - type: GitHubOrganization
+    url: https://github.com/Forethought-Technologies
+  - type: SDK
+    url: https://github.com/Forethought-Technologies/solve-ios
+    name: Solve iOS SDK
+  - type: SDK
+    url: https://github.com/Forethought-Technologies/solve-android
+    name: Solve Android SDK
+  - type: Tool
+    url: https://github.com/Forethought-Technologies/AutoChain
+    name: AutoChain (open-source LLM agent framework)
+  - type: Documentation
+    url: https://autochain.forethought.ai
+    name: AutoChain Docs
+  - type: Integrations
+    url: https://forethought.ai/platform
+    data:
+      - name: Zendesk
+        category: Helpdesk
+      - name: Salesforce
+        category: CRM
+      - name: Intercom
+        category: Helpdesk
+      - name: Genesys
+        category: Contact Center
+      - name: Five9
+        category: Contact Center
+      - name: Gorgias
+        category: Helpdesk
+      - name: LiveChat
+        category: Chat
+      - name: Front
+        category: Helpdesk
+      - name: Notion
+        category: Knowledge
+      - name: Document360
+        category: Knowledge
+      - name: Stonly
+        category: Knowledge
+      - name: Airtable
+        category: API Connector
+      - name: Snowflake
+        category: API Connector
+      - name: 8x8
+        category: Contact Center
+      - name: Slack
+        category: Channel
+  - type: Channels
+    data:
+      - Chat
+      - Email
+      - Voice
+      - Slack
+      - Mobile Apps
+      - Headless / API
+      - Browser Agent
+  - type: Customers
+    data:
+      - Acorns
+      - Grammarly
+      - Fetch Rewards
+      - Thumbtack
+      - Upwork
+      - Viome
+      - WordPress
+      - Redis
+      - UPS
+      - Corsair
+      - Justworks
+      - Descript
+      - Lattice
+      - Cohere
+      - Scale AI
+      - Carta
+  - type: Features
+    data:
+      - Solve — omnichannel AI agent with end-to-end resolution across chat, email, voice, Slack, mobile, and headless API
+      - Triage — customer-trained ticket classification with ranked predictions and confidence scores
+      - Discover — automatic knowledge-gap detection and AI-drafted knowledge-base articles and Autoflows
+      - Assist — agentic AI copilot for human agents (ticket summaries, resolution guidance, AI-generated replies)
+      - Agent QA — automated quality reviews against customizable rubrics with performance dashboards
+      - SupportGPT — fine-tuned generative AI engine grounded in customer conversation history
+      - Autoflows — generative AI workflows that fully resolve customer issues end-to-end
+      - Context Variables — typed values (string, number, boolean, list, object) passed into Solve conversations
+      - Multilingual support across Solve and Triage
+      - Multi-brand support (2 brands Professional, 20 brands Enterprise)
+      - Browser Agent — operates inside the browser to interact with legacy applications without backend APIs
+      - Headless API channel for embedding into custom applications
+      - Outbound Call API for voice automation (provisioned by Customer Success)
+      - Public Solve iOS and Android SDKs (Apache-2.0)
+      - AutoChain — open-source lightweight framework for building and testing LLM agents (1.8k+ GitHub stars)
+      - Bearer-token authentication on both Solve API and Triage API
+      - Forethought API access available on the Enterprise plan
+      - Now part of Zendesk (acquired)
+    sources:
+      - https://forethought.ai/
+      - https://forethought.ai/platform
+      - https://forethought.ai/pricing
+      - https://support.forethought.ai/hc/en-us/articles/31636750750227-Solve-API-Developer-Reference
+      - https://support.forethought.ai/hc/en-us/articles/26701042038419-Triage-API-Guide-for-Users
+      - https://github.com/Forethought-Technologies
+    updated: '2026-05-24'
+maintainers:
+  - FN: Kin Lane
+    email: kin@apievangelist.com

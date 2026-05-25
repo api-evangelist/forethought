@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-structure.org/draft/2025-01",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/forethought/main/json-structure/forethought-triage-prediction-structure.json",
+  "title": "Forethought Triage Prediction Structure",
+  "description": "Structural breakdown of a Triage prediction response.",
+  "type": "object",
+  "name": "TriagePrediction",
+  "fields": [
+    { "name": "model_name", "type": "string", "required": true },
+    { "name": "prediction_confidence", "type": "number", "min": 0, "max": 1 },
+    {
+      "name": "top_predictions",
+      "type": "array",
+      "items": {
+        "type": "object",
+        "fields": [
+          { "name": "prediction_value", "type": "string", "required": true },
+          { "name": "prediction_confidence", "type": "number", "min": 0, "max": 1 }
+        ]
+      }
+    }
+  ]
+}

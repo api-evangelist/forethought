@@ -1,0 +1,84 @@
+specification: FinOps Framework
+specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
+provider: Forethought
+providerId: forethought
+created: '2026-05-24'
+modified: '2026-05-24'
+reconciled: false
+tags:
+  - FinOps
+  - Cost Management
+  - AI
+  - Customer Support
+description: |
+  FOCUS-aligned FinOps definition for Forethought's generative AI customer-
+  support platform. Forethought uses contracted enterprise subscription
+  pricing (annual contracts, tier-based) negotiated through Sales. Forethought
+  does not publish per-seat, per-conversation, or per-token rate cards on its
+  website, so cost allocation must be reconciled against invoices and the
+  contracted plan tier (Basic, Professional, Enterprise) plus any add-ons
+  (Assist, Agent QA, Forethought for Slack).
+sources:
+  - https://forethought.ai/pricing
+alignedWith:
+  framework: FinOps Foundation Framework
+  frameworkUrl: https://www.finops.org/framework/
+  dataSpec: FOCUS
+  dataSpecVersion: '1.3'
+  dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
+publisherName: Forethought
+serviceCategory: AI and Machine Learning
+billingModel:
+  pricingCategory: Subscription
+  billingFrequency: Annual
+  billingCurrency: USD
+  chargeCategories:
+    - Subscription
+    - Usage
+    - Adjustment
+    - Credit
+  primaryUnit: contract
+  secondaryUnits:
+    - resolution
+    - conversation
+    - ticket
+    - brand
+    - rubric
+    - triage_model
+focusColumns:
+  ServiceName: Forethought
+  ServiceCategory: AI and Machine Learning
+  ProviderName: Forethought
+  PublisherName: Forethought
+  InvoiceIssuerName: Forethought
+  PricingCategory: Subscription
+  PricingUnit: contract
+  BillingCurrency: USD
+meters:
+  - name: solve_resolutions
+    unit: resolution
+    aggregation: sum
+    dimensions:
+      - brand
+      - channel
+      - workflow_id
+  - name: triage_predictions
+    unit: prediction
+    aggregation: sum
+    dimensions:
+      - triage_model
+  - name: assist_replies
+    unit: reply
+    aggregation: sum
+    dimensions:
+      - agent
+      - brand
+  - name: agent_qa_reviews
+    unit: review
+    aggregation: sum
+    dimensions:
+      - rubric
+notes:
+  - Forethought publishes ROI metrics (15x average ROI, 55% reduction in first response time, up to 98% resolution rate) but no public unit pricing.
+  - Customers should request the order form line items to map subscription cost across Solve, Triage, Discover, Assist, and Agent QA for FinOps allocation.

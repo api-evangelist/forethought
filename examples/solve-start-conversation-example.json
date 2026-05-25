@@ -1,0 +1,30 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "https://app.forethought.ai/solve/api/v1/conversation",
+    "headers": {
+      "Authorization": "Bearer {solve-api-token}",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "query": "Where is my order?",
+      "user_id": "user-9821",
+      "channel": "headless",
+      "context_variables": {
+        "ftcv_email": "kin@example.com",
+        "ftcv_order_id": "ORD-44219"
+      }
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "conversation_id": "conv_01HBXY7K9P3MR2Z4A8F0W6N2QV",
+      "response": "Hi Kin — order ORD-44219 shipped Monday and is out for delivery today. Would you like a tracking link?",
+      "is_solved": false,
+      "should_escalate": false,
+      "workflow_id": "wf_order_status",
+      "intent": "order_status"
+    }
+  }
+}

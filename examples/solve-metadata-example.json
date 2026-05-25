@@ -1,0 +1,35 @@
+{
+  "request": {
+    "method": "GET",
+    "url": "https://app.forethought.ai/solve/api/v1/metadata",
+    "headers": {
+      "Authorization": "Bearer {solve-api-token}",
+      "Content-Type": "application/json"
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "context_variables": [
+        {
+          "context_variable_id": "ftcv_email",
+          "display_name": "Email",
+          "is_predefined": true,
+          "context_variable_type": "string"
+        },
+        {
+          "context_variable_id": "ftcv_order_id",
+          "display_name": "Order ID",
+          "is_predefined": false,
+          "context_variable_type": "string"
+        },
+        {
+          "context_variable_id": "ftcv_plan_tier",
+          "display_name": "Plan Tier",
+          "is_predefined": false,
+          "context_variable_type": "string"
+        }
+      ]
+    }
+  }
+}

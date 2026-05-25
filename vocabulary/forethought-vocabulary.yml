@@ -1,0 +1,40 @@
+vocabulary: Forethought
+description: |
+  Vocabulary for the Forethought generative AI customer-support platform.
+  Covers the Solve agent (conversations, autoflows, context variables),
+  Triage agent (predictions, models, labels), Discover (knowledge gaps,
+  generated articles), Assist (agent copilot), Agent QA (rubrics, reviews),
+  and the cross-cutting SupportGPT engine.
+created: '2026-05-24'
+modified: '2026-05-24'
+terms:
+  - name: SupportGPT
+    description: Forethought's generative AI engine that fine-tunes large language models on a customer's conversation history.
+  - name: Solve
+    description: Omnichannel AI agent that resolves end-customer issues across chat, email, voice, Slack, mobile, and headless API.
+  - name: Triage
+    description: AI agent that classifies and routes inbound tickets using customer-trained models.
+  - name: Discover
+    description: AI agent that surfaces knowledge gaps from support conversations and drafts new knowledge-base articles and autoflows.
+  - name: Assist
+    description: Agentic AI copilot that supports human agents with ticket summaries, resolution guidance, and AI-generated replies.
+  - name: Agent QA
+    description: Automated quality reviews of agent tickets against customizable rubrics with performance dashboards.
+  - name: Autoflow
+    description: Generative AI workflow inside Solve that fully resolves a customer issue end-to-end.
+  - name: Context Variable
+    description: A typed value (string, number, boolean, list, object) passed into a Solve conversation to personalize responses or drive branching.
+  - name: Conversation
+    description: A multi-turn exchange between an end-customer and the Solve agent identified by a conversation_id.
+  - name: Triage Model
+    description: A customer-specific classifier trained by Forethought to predict ticket labels (category, language, sentiment, etc.).
+  - name: Prediction Confidence
+    description: A score between 0.0 and 1.0 indicating how confident a Triage model is in a given prediction.
+  - name: Headless
+    description: API-only channel for embedding Forethought AI into custom applications, mobile apps, or proprietary surfaces.
+  - name: Browser Agent
+    description: Forethought AI agent that operates inside the browser to interact with legacy applications without requiring backend APIs.
+  - name: Outbound Call API
+    description: API-triggered outbound voice calls. Access provisioned by Forethought Customer Success.
+  - name: AutoChain
+    description: Forethought's open-source lightweight framework for building and testing LLM agents.

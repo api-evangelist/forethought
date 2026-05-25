@@ -1,0 +1,100 @@
+{
+  "@context": {
+    "@version": 1.1,
+    "@vocab": "https://schema.org/",
+    "forethought": "https://app.forethought.ai/solve/api/v1/",
+    "triage": "https://api.forethought.ai/api/",
+    "schema": "https://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#",
+    "dcterms": "http://purl.org/dc/terms/",
+
+    "SolveConversation": {
+      "@id": "forethought:Conversation",
+      "@context": {
+        "conversation_id": {
+          "@id": "forethought:Conversation/id",
+          "@type": "xsd:string"
+        },
+        "user_id": {
+          "@id": "forethought:Conversation/userId",
+          "@type": "xsd:string"
+        },
+        "channel": {
+          "@id": "forethought:Conversation/channel",
+          "@type": "xsd:string"
+        },
+        "query": {
+          "@id": "forethought:Conversation/query",
+          "@type": "xsd:string"
+        },
+        "response": {
+          "@id": "forethought:Conversation/response",
+          "@type": "xsd:string"
+        },
+        "is_solved": {
+          "@id": "forethought:Conversation/isSolved",
+          "@type": "xsd:boolean"
+        },
+        "should_escalate": {
+          "@id": "forethought:Conversation/shouldEscalate",
+          "@type": "xsd:boolean"
+        },
+        "workflow_id": {
+          "@id": "forethought:Conversation/workflowId",
+          "@type": "xsd:string"
+        },
+        "intent": {
+          "@id": "forethought:Conversation/intent",
+          "@type": "xsd:string"
+        },
+        "context_variables": {
+          "@id": "forethought:Conversation/contextVariables"
+        }
+      }
+    },
+
+    "ContextVariable": {
+      "@id": "forethought:ContextVariable",
+      "@context": {
+        "context_variable_id": {
+          "@id": "forethought:ContextVariable/id",
+          "@type": "xsd:string"
+        },
+        "display_name": {
+          "@id": "forethought:ContextVariable/displayName",
+          "@type": "xsd:string"
+        },
+        "is_predefined": {
+          "@id": "forethought:ContextVariable/isPredefined",
+          "@type": "xsd:boolean"
+        },
+        "context_variable_type": {
+          "@id": "forethought:ContextVariable/type",
+          "@type": "xsd:string"
+        }
+      }
+    },
+
+    "TriagePrediction": {
+      "@id": "triage:Prediction",
+      "@context": {
+        "model_name": {
+          "@id": "triage:Prediction/modelName",
+          "@type": "xsd:string"
+        },
+        "prediction_value": {
+          "@id": "triage:Prediction/value",
+          "@type": "xsd:string"
+        },
+        "prediction_confidence": {
+          "@id": "triage:Prediction/confidence",
+          "@type": "xsd:float"
+        },
+        "top_predictions": {
+          "@id": "triage:Prediction/topPredictions",
+          "@container": "@list"
+        }
+      }
+    }
+  }
+}

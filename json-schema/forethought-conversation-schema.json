@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/forethought/main/json-schema/forethought-conversation-schema.json",
+  "title": "Forethought Solve Conversation",
+  "description": "A Solve conversation between an end-user and the Forethought Solve agent.",
+  "type": "object",
+  "properties": {
+    "conversation_id": {
+      "type": "string",
+      "description": "Unique identifier for the conversation."
+    },
+    "user_id": {
+      "type": "string",
+      "description": "Stable identifier for the end user."
+    },
+    "channel": {
+      "type": "string",
+      "enum": ["chat", "email", "voice", "slack", "headless", "mobile"],
+      "description": "Origin channel of the conversation."
+    },
+    "query": {
+      "type": "string",
+      "description": "The customer's free-form question or statement."
+    },
+    "response": {
+      "type": "string",
+      "description": "Solve agent reply text."
+    },
+    "is_solved": {
+      "type": "boolean",
+      "description": "True when the conversation has been resolved by Solve."
+    },
+    "should_escalate": {
+      "type": "boolean",
+      "description": "True when Solve recommends escalating to a human agent."
+    },
+    "workflow_id": {
+      "type": "string",
+      "description": "Identifier of the matched Autoflow / workflow."
+    },
+    "intent": {
+      "type": "string",
+      "description": "Predicted customer intent."
+    },
+    "context_variables": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Map of Solve context variable IDs to their values for this conversation."
+    },
+    "created_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "updated_at": {
+      "type": "string",
+      "format": "date-time"
+    }
+  },
+  "required": ["conversation_id", "query"]
+}

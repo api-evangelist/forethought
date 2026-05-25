@@ -1,0 +1,46 @@
+extends: spectral:oas
+rules:
+  # Forethought operations use Title Case summaries.
+  forethought-operation-summary-title-case:
+    description: Operation summaries must use Title Case.
+    severity: warn
+    given: $.paths[*][get,put,post,delete,patch].summary
+    then:
+      function: pattern
+      functionOptions:
+        match: "^([A-Z0-9][A-Za-z0-9]*)( [A-Z0-9][A-Za-z0-9]*)*$"
+
+  forethought-operation-id-required:
+    description: Every operation must have an operationId.
+    severity: error
+    given: $.paths[*][get,put,post,delete,patch]
+    then:
+      field: operationId
+      function: truthy
+
+  forethought-operation-tags-required:
+    description: Every operation must declare at least one tag.
+    severity: error
+    given: $.paths[*][get,put,post,delete,patch]
+    then:
+      field: tags
+      function: truthy
+
+  forethought-bearer-auth-required:
+    description: Forethought APIs use Bearer token authentication.
+    severity: error
+    given: $.components.securitySchemes[*]
+    then:
+      field: scheme
+      function: pattern
+      functionOptions:
+        match: "^bearer$"
+
+  forethought-server-is-https:
+    description: Server URLs must be HTTPS.
+    severity: error
+    given: $.servers[*].url
+    then:
+      function: pattern
+      functionOptions:
+        match: "^https://"

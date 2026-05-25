@@ -1,0 +1,27 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "https://api.forethought.ai/api/predict",
+    "headers": {
+      "Authorization": "Bearer {triage-api-token}",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "model_name": "ticket_category_v3",
+      "text_a": "Charged twice for May subscription",
+      "text_b": "Hi — I was billed $29 on May 3 and again on May 4 for the Pro plan. Can you refund the duplicate charge?"
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "model_name": "ticket_category_v3",
+      "prediction_confidence": 0.94,
+      "top_predictions": [
+        { "prediction_value": "billing/duplicate_charge", "prediction_confidence": 0.94 },
+        { "prediction_value": "billing/refund_request", "prediction_confidence": 0.71 },
+        { "prediction_value": "billing/subscription", "prediction_confidence": 0.42 }
+      ]
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-evangelist/forethought/main/json-schema/forethought-triage-prediction-schema.json",
+  "title": "Forethought Triage Prediction",
+  "description": "A single label prediction returned by a Forethought Triage model.",
+  "type": "object",
+  "properties": {
+    "model_name": {
+      "type": "string",
+      "description": "The Triage model identifier that produced this prediction."
+    },
+    "prediction_value": {
+      "type": "string",
+      "description": "The predicted label (category, language, sentiment, etc.)."
+    },
+    "prediction_confidence": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1,
+      "description": "Confidence score between 0.0 and 1.0."
+    },
+    "top_predictions": {
+      "type": "array",
+      "description": "Ranked list of alternative predictions.",
+      "items": {
+        "type": "object",
+        "properties": {
+          "prediction_value": { "type": "string" },
+          "prediction_confidence": {
+            "type": "number",
+            "minimum": 0,
+            "maximum": 1
+          }
+        },
+        "required": ["prediction_value", "prediction_confidence"]
+      }
+    }
+  },
+  "required": ["model_name", "prediction_value", "prediction_confidence"]
+}
