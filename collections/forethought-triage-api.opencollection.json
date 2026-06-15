@@ -1,0 +1,39 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Forethought Triage API",
+    "version": "2025-11-01"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Predictions",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Predict Ticket Triage Labels",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://api.forethought.ai/api/predict",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Submit a ticket subject and body and receive ranked predictions from a\nForethought Triage model. Each prediction includes a `prediction_value`\n(the label) and `prediction_confidence` (0.0 to 1.0). Use the top\nprediction to route tickets, populate ticket fields, or trigger\ndownstream workflows in Zendesk, Salesforce, or other helpdesks.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

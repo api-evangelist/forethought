@@ -1,0 +1,81 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Forethought Solve API",
+    "version": "2025-11-01"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Conversations",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Start A Solve Conversation",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://app.forethought.ai/solve/api/v1/conversation",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Start a new Solve conversation with a free-form customer query.\nReturns a `conversation_id` that subsequent turns must reference and the\nfirst assistant response. Optionally accepts a map of context variables\nwhose IDs are discoverable via the `/metadata` endpoint.\n"
+        },
+        {
+          "info": {
+            "name": "Continue A Solve Conversation",
+            "type": "http"
+          },
+          "http": {
+            "method": "PUT",
+            "url": "https://app.forethought.ai/solve/api/v1/conversation/:conversation_id",
+            "params": [
+              {
+                "name": "conversation_id",
+                "value": "",
+                "type": "path",
+                "description": "The conversation_id returned by the initial start call."
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Continue an existing Solve conversation by sending an additional query\nand/or updated context variables. The Solve agent returns the next\nassistant response, surface workflow state, and any escalation\ninstructions.\n"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Metadata",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Solve Workspace Metadata",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://app.forethought.ai/solve/api/v1/metadata"
+          },
+          "docs": "Return the workspace's Solve configuration including the list of\ndefined context variables (both predefined and customer-defined) with\nID, display name, and type. Use these IDs when passing context to the\nconversation endpoints.\n"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

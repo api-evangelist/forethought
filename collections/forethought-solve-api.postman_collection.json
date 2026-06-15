@@ -1,0 +1,683 @@
+{
+  "item": [
+    {
+      "id": "c461085b-a3ad-4e7c-91e0-b13a62296185",
+      "name": "Conversations",
+      "description": {
+        "content": "Start and continue Solve conversations.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "13009554-a4ca-4433-a33d-84b07d0505bd",
+          "name": "Start A Solve Conversation",
+          "request": {
+            "name": "Start A Solve Conversation",
+            "description": {
+              "content": "Start a new Solve conversation with a free-form customer query.\nReturns a `conversation_id` that subsequent turns must reference and the\nfirst assistant response. Optionally accepts a map of context variables\nwhose IDs are discoverable via the `/metadata` endpoint.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "solve",
+                "api",
+                "v1",
+                "conversation"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"<string>\",\n  \"context_variables\": {\n    \"key_0\": \"string\",\n    \"key_1\": 3555.667791293646\n  },\n  \"channel\": \"<string>\",\n  \"user_id\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "3239a65f-c68c-4fb1-af1e-aad2fc68f25a",
+              "name": "Conversation started successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "solve",
+                    "api",
+                    "v1",
+                    "conversation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"query\": \"<string>\",\n  \"context_variables\": {\n    \"key_0\": 1301,\n    \"key_1\": 227.91620953501624,\n    \"key_2\": 9981\n  },\n  \"channel\": \"<string>\",\n  \"user_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"conversation_id\": \"string\",\n  \"response\": \"string\",\n  \"is_solved\": true,\n  \"should_escalate\": true,\n  \"workflow_id\": \"string\",\n  \"intent\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "d7358a8b-6e96-4c27-8a27-866d05b410a3",
+              "name": "Missing or invalid bearer token.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "solve",
+                    "api",
+                    "v1",
+                    "conversation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"query\": \"<string>\",\n  \"context_variables\": {\n    \"key_0\": 1301,\n    \"key_1\": 227.91620953501624,\n    \"key_2\": 9981\n  },\n  \"channel\": \"<string>\",\n  \"user_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "494c884a-2251-4b51-972a-6609e8fc5446",
+              "name": "Request rate limit exceeded.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "solve",
+                    "api",
+                    "v1",
+                    "conversation"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"query\": \"<string>\",\n  \"context_variables\": {\n    \"key_0\": 1301,\n    \"key_1\": 227.91620953501624,\n    \"key_2\": 9981\n  },\n  \"channel\": \"<string>\",\n  \"user_id\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "eb3ac0fb-6506-4d74-8bfa-aa0f673a7bfd",
+          "name": "Continue A Solve Conversation",
+          "request": {
+            "name": "Continue A Solve Conversation",
+            "description": {
+              "content": "Continue an existing Solve conversation by sending an additional query\nand/or updated context variables. The Solve agent returns the next\nassistant response, surface workflow state, and any escalation\ninstructions.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "solve",
+                "api",
+                "v1",
+                "conversation",
+                ":conversation_id"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "conversation_id",
+                  "description": "(Required) The conversation_id returned by the initial start call."
+                }
+              ]
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "PUT",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"query\": \"<string>\",\n  \"context_variables\": {\n    \"key_0\": 7336.6655704196555,\n    \"key_1\": 3954,\n    \"key_2\": false,\n    \"key_3\": 9125.52989586351\n  }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7430b792-f974-4d69-8b23-58edfc4549cd",
+              "name": "Conversation continued successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "solve",
+                    "api",
+                    "v1",
+                    "conversation",
+                    ":conversation_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "conversation_id",
+                      "description": "(Required) The conversation_id returned by the initial start call."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"query\": \"<string>\",\n  \"context_variables\": {\n    \"key_0\": 4156,\n    \"key_1\": \"string\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"conversation_id\": \"string\",\n  \"response\": \"string\",\n  \"is_solved\": true,\n  \"should_escalate\": true,\n  \"workflow_id\": \"string\",\n  \"intent\": \"string\"\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "822ba3d9-9cd0-4e9d-a69b-2bff5c054679",
+              "name": "Missing or invalid bearer token.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "solve",
+                    "api",
+                    "v1",
+                    "conversation",
+                    ":conversation_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "conversation_id",
+                      "description": "(Required) The conversation_id returned by the initial start call."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"query\": \"<string>\",\n  \"context_variables\": {\n    \"key_0\": 4156,\n    \"key_1\": \"string\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "c3f3ddc4-04af-4d7e-ab2c-2fd0732df00e",
+              "name": "Conversation not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "solve",
+                    "api",
+                    "v1",
+                    "conversation",
+                    ":conversation_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "conversation_id",
+                      "description": "(Required) The conversation_id returned by the initial start call."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"query\": \"<string>\",\n  \"context_variables\": {\n    \"key_0\": 4156,\n    \"key_1\": \"string\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "8e985bd6-8805-4955-81ea-87d4741c73ef",
+              "name": "Request rate limit exceeded.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "solve",
+                    "api",
+                    "v1",
+                    "conversation",
+                    ":conversation_id"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "conversation_id",
+                      "description": "(Required) The conversation_id returned by the initial start call."
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "PUT",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"query\": \"<string>\",\n  \"context_variables\": {\n    \"key_0\": 4156,\n    \"key_1\": \"string\"\n  }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    },
+    {
+      "id": "bacc8344-2e91-4f30-a927-dc1eb16f7589",
+      "name": "Metadata",
+      "description": {
+        "content": "Inspect workspace-level Solve configuration.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7206f53a-e043-4fd9-9ac0-8b56ad356699",
+          "name": "List Solve Workspace Metadata",
+          "request": {
+            "name": "List Solve Workspace Metadata",
+            "description": {
+              "content": "Return the workspace's Solve configuration including the list of\ndefined context variables (both predefined and customer-defined) with\nID, display name, and type. Use these IDs when passing context to the\nconversation endpoints.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "solve",
+                "api",
+                "v1",
+                "metadata"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "028eed0c-fb1c-4bac-bf74-5c8b07bba358",
+              "name": "Metadata returned successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "solve",
+                    "api",
+                    "v1",
+                    "metadata"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"context_variables\": [\n    {\n      \"context_variable_id\": \"string\",\n      \"display_name\": \"string\",\n      \"is_predefined\": true,\n      \"context_variable_type\": \"list\"\n    },\n    {\n      \"context_variable_id\": \"string\",\n      \"display_name\": \"string\",\n      \"is_predefined\": true,\n      \"context_variable_type\": \"list\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "96563ccb-6eb7-4203-910f-bb5b8fc2d83f",
+              "name": "Missing or invalid bearer token.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "solve",
+                    "api",
+                    "v1",
+                    "metadata"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://app.forethought.ai",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "3cad6f9a-e96a-4942-a82e-9ec2fdec5f0c",
+    "name": "Forethought Solve API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Forethought Solve API is a headless interface to the Solve generative AI\ncustomer support agent. Embed Solve into any application by starting a\nconversation with a free-form customer query, then continuing the\nconversation with additional turns or context variables. The metadata\nendpoint returns the workspace's configured context variables so clients\ncan pass the correct values when triggering Autoflows and workflows.\n\nThe Solve API is part of Forethought's Headless channel and is available on\nthe Enterprise plan. SupportGPT, Forethought's generative AI engine, powers\nresponse generation, Autoflows, knowledge-base gap detection, and\narticle-creation behind the API.\n\n\nContact Support:\n Name: Forethought Support",
+      "type": "text/plain"
+    }
+  }
+}
