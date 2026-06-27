@@ -58,11 +58,11 @@ apis:
       - url: json-ld/forethought-context.jsonld
         type: JSONLD
       - url: examples/solve-start-conversation-example.json
-        type: Example
+        type: Examples
       - url: examples/solve-continue-conversation-example.json
-        type: Example
+        type: Examples
       - url: examples/solve-metadata-example.json
-        type: Example
+        type: Examples
     description: >-
       Headless REST API for the Solve omnichannel AI agent. Start a conversation with a free-form customer query,
       continue the conversation with additional turns or context-variable updates, and inspect the workspace's defined
@@ -88,7 +88,7 @@ apis:
       - url: json-ld/forethought-context.jsonld
         type: JSONLD
       - url: examples/triage-predict-example.json
-        type: Example
+        type: Examples
     description: >-
       REST API for the Triage agent. POST a ticket subject (text_a) and body (text_b) plus the model_name issued by
       Forethought, and receive ranked predictions with confidence scores. Use to drive ticket routing, auto-populated
@@ -129,13 +129,13 @@ common:
     url: https://twitter.com/forethought_ai
   - type: GitHubOrganization
     url: https://github.com/Forethought-Technologies
-  - type: SDK
+  - type: SDKs
     url: https://github.com/Forethought-Technologies/solve-ios
     name: Solve iOS SDK
-  - type: SDK
+  - type: SDKs
     url: https://github.com/Forethought-Technologies/solve-android
     name: Solve Android SDK
-  - type: Tool
+  - type: Tools
     url: https://github.com/Forethought-Technologies/AutoChain
     name: AutoChain (open-source LLM agent framework)
   - type: Documentation
