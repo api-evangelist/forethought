@@ -1,0 +1,13 @@
+generated: '2026-07-11'
+method: searched
+probe: true
+source: https://forethought.ai/compliance
+url: https://forethought.ai/compliance
+certifications:
+- SOC 2
+- GDPR
+evidence:
+- source: https://forethought.ai/compliance
+  keywords:
+  - soc 2
+  - gdpr

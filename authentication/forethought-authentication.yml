@@ -1,0 +1,14 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/forethought-solve-api-openapi.yml, openapi/forethought-triage-api-openapi.yml
+summary:
+  types:
+  - http
+schemes:
+- name: BearerAuth
+  type: http
+  scheme: bearer
+  bearerFormat: Solve API token
+  sources:
+  - openapi/forethought-solve-api-openapi.yml
+  - openapi/forethought-triage-api-openapi.yml

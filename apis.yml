@@ -94,6 +94,12 @@ apis:
       Forethought, and receive ranked predictions with confidence scores. Use to drive ticket routing, auto-populated
       ticket fields, language detection, sentiment, or other customer-trained labels.
 common:
+  - type: TrustCenter
+    url: security/forethought-trust-center.yml
+  - type: DomainSecurity
+    url: security/forethought-domain-security.yml
+  - type: Authentication
+    url: authentication/forethought-authentication.yml
   - type: Website
     url: https://forethought.ai
   - type: Portal

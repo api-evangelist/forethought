@@ -1,0 +1,27 @@
+generated: '2026-07-11'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: forethought.ai
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Sep 30 02:24:14 2026 GMT
+  hsts: true
+  hsts_max_age: 31536000
+- host: support.forethought.ai
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct  2 23:48:48 2026 GMT
+  hsts: false
+- host: app.forethought.ai
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Oct  6 05:32:41 2026 GMT
+  hsts: null
+domains:
+- domain: forethought.ai
+  dnssec: true
+  caa: []
+  spf: true
+  dmarc: true
+  dmarc_policy: quarantine
