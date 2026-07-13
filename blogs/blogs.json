@@ -3,18 +3,13 @@
   "feeds": [
     {
       "source": "https://forethought.ai/resource-center",
-      "feed_url": "",
+      "feed_url": "https://forethought.ai/resource-center",
+      "title": "",
       "saved": 0,
-      "method": "agent-scrape"
-    },
-    {
-      "source": "https://engineering.forethought.ai/blog/",
-      "feed_url": "",
-      "saved": 0,
-      "method": "agent-scrape"
+      "method": "none"
     }
   ],
-  "post_count": 0,
-  "fetched": "2026-06-27T12:42:36Z",
-  "agent_pulled": "2026-06-27"
+  "post_count": 1,
+  "fetched": "2026-07-11T11:50:51Z",
+  "agent_pulled": "2026-07-04"
 }
