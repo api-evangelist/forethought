@@ -94,6 +94,8 @@ apis:
       Forethought, and receive ranked predictions with confidence scores. Use to drive ticket routing, auto-populated
       ticket fields, language detection, sentiment, or other customer-trained labels.
 common:
+  - type: AgenticAccess
+    url: agentic-access/forethought-agentic-access.yml
   - type: TrustCenter
     url: security/forethought-trust-center.yml
   - type: DomainSecurity
