@@ -1,0 +1,98 @@
+openapi: 3.1.0
+info:
+  title: Forethought Solve Conversations Metadata API
+  description: 'The Forethought Solve API is a headless interface to the Solve generative AI
+
+    customer support agent. Embed Solve into any application by starting a
+
+    conversation with a free-form customer query, then continuing the
+
+    conversation with additional turns or context variables. The metadata
+
+    endpoint returns the workspace''s configured context variables so clients
+
+    can pass the correct values when triggering Autoflows and workflows.
+
+
+    The Solve API is part of Forethought''s Headless channel and is available on
+
+    the Enterprise plan. SupportGPT, Forethought''s generative AI engine, powers
+
+    response generation, Autoflows, knowledge-base gap detection, and
+
+    article-creation behind the API.
+
+    '
+  version: '2025-11-01'
+  contact:
+    name: Forethought Support
+    url: https://support.forethought.ai
+  x-logo:
+    url: https://forethought.ai/favicon.ico
+servers:
+- url: https://app.forethought.ai
+  description: Production Server
+security:
+- BearerAuth: []
+tags:
+- name: Metadata
+  description: Inspect workspace-level Solve configuration.
+paths:
+  /solve/api/v1/metadata:
+    get:
+      summary: List Solve Workspace Metadata
+      description: 'Return the workspace''s Solve configuration including the list of
+
+        defined context variables (both predefined and customer-defined) with
+
+        ID, display name, and type. Use these IDs when passing context to the
+
+        conversation endpoints.
+
+        '
+      operationId: getMetadata
+      tags:
+      - Metadata
+      responses:
+        '200':
+          description: Metadata returned successfully.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/MetadataResponse'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+components:
+  schemas:
+    MetadataResponse:
+      type: object
+      properties:
+        context_variables:
+          type: array
+          items:
+            $ref: '#/components/schemas/ContextVariable'
+    ContextVariable:
+      type: object
+      properties:
+        context_variable_id:
+          type: string
+        display_name:
+          type: string
+        is_predefined:
+          type: boolean
+        context_variable_type:
+          type: string
+          enum:
+          - string
+          - number
+          - boolean
+          - list
+          - object
+  responses:
+    Unauthorized:
+      description: Missing or invalid bearer token.
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: Solve API token
