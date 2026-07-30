@@ -27,72 +27,135 @@ tags:
   - Helpdesk
   - Multi-Agent
 url: https://raw.githubusercontent.com/api-evangelist/forethought/refs/heads/main/apis.yml
+accessModel:
+  pricing: paid
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Paid · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 created: '2026-05-24'
 modified: '2026-05-24'
 specificationVersion: '0.20'
 kind: contract
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/forethought.png
 access: 3rd-Party
 position: Consuming
 apis:
-  - aid: forethought:forethought-solve-api
-    name: Forethought Solve API
-    tags:
-      - AI
-      - Customer Support
-      - Solve
-      - Conversations
-      - Headless
-    humanURL: https://support.forethought.ai/hc/en-us/articles/31636750750227-Solve-API-Developer-Reference
-    properties:
-      - url: https://support.forethought.ai/hc/en-us/articles/31636750750227-Solve-API-Developer-Reference
-        type: Documentation
-      - url: openapi/forethought-solve-api-openapi.yml
-        type: OpenAPI
-      - url: json-schema/forethought-conversation-schema.json
-        type: JSONSchema
-      - url: json-schema/forethought-context-variable-schema.json
-        type: JSONSchema
-      - url: json-structure/forethought-conversation-structure.json
-        type: JSONStructure
-      - url: json-ld/forethought-context.jsonld
-        type: JSONLD
-      - url: examples/solve-start-conversation-example.json
-        type: Examples
-      - url: examples/solve-continue-conversation-example.json
-        type: Examples
-      - url: examples/solve-metadata-example.json
-        type: Examples
-    description: >-
-      Headless REST API for the Solve omnichannel AI agent. Start a conversation with a free-form customer query,
-      continue the conversation with additional turns or context-variable updates, and inspect the workspace's defined
-      context variables. Bearer-token authenticated against app.forethought.ai/solve/api/v1.
-  - aid: forethought:forethought-triage-api
-    name: Forethought Triage API
-    tags:
-      - AI
-      - Customer Support
-      - Triage
-      - Classification
-      - Predictions
-    humanURL: https://support.forethought.ai/hc/en-us/articles/26701042038419-Triage-API-Guide-for-Users
-    properties:
-      - url: https://support.forethought.ai/hc/en-us/articles/26701042038419-Triage-API-Guide-for-Users
-        type: Documentation
-      - url: openapi/forethought-triage-api-openapi.yml
-        type: OpenAPI
-      - url: json-schema/forethought-triage-prediction-schema.json
-        type: JSONSchema
-      - url: json-structure/forethought-triage-prediction-structure.json
-        type: JSONStructure
-      - url: json-ld/forethought-context.jsonld
-        type: JSONLD
-      - url: examples/triage-predict-example.json
-        type: Examples
-    description: >-
-      REST API for the Triage agent. POST a ticket subject (text_a) and body (text_b) plus the model_name issued by
-      Forethought, and receive ranked predictions with confidence scores. Use to drive ticket routing, auto-populated
-      ticket fields, language detection, sentiment, or other customer-trained labels.
+- aid: forethought:forethought-conversations-api
+  name: Forethought Conversations API
+  description: Start and continue Solve conversations.
+  humanURL: >-
+    https://support.forethought.ai/hc/en-us/articles/31636750750227-Solve-API-Developer-Reference
+  tags:
+  - Conversations
+  properties:
+  - type: OpenAPI
+    url: openapi/forethought-conversations-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://support.forethought.ai/hc/en-us/articles/31636750750227-Solve-API-Developer-Reference
+  - type: JSONSchema
+    url: json-schema/forethought-conversation-schema.json
+  - type: JSONSchema
+    url: json-schema/forethought-context-variable-schema.json
+  - type: JSONStructure
+    url: json-structure/forethought-conversation-structure.json
+  - type: JSONLD
+    url: json-ld/forethought-context.jsonld
+  - type: Examples
+    url: examples/solve-start-conversation-example.json
+  - type: Examples
+    url: examples/solve-continue-conversation-example.json
+  - type: Examples
+    url: examples/solve-metadata-example.json
+  - type: Documentation
+    url: >-
+      https://support.forethought.ai/hc/en-us/articles/26701042038419-Triage-API-Guide-for-Users
+  - type: JSONSchema
+    url: json-schema/forethought-triage-prediction-schema.json
+  - type: JSONStructure
+    url: json-structure/forethought-triage-prediction-structure.json
+  - type: Examples
+    url: examples/triage-predict-example.json
+- aid: forethought:forethought-metadata-api
+  name: Forethought Metadata API
+  description: Inspect workspace-level Solve configuration.
+  humanURL: >-
+    https://support.forethought.ai/hc/en-us/articles/31636750750227-Solve-API-Developer-Reference
+  tags:
+  - Metadata
+  properties:
+  - type: OpenAPI
+    url: openapi/forethought-metadata-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://support.forethought.ai/hc/en-us/articles/31636750750227-Solve-API-Developer-Reference
+  - type: JSONSchema
+    url: json-schema/forethought-conversation-schema.json
+  - type: JSONSchema
+    url: json-schema/forethought-context-variable-schema.json
+  - type: JSONStructure
+    url: json-structure/forethought-conversation-structure.json
+  - type: JSONLD
+    url: json-ld/forethought-context.jsonld
+  - type: Examples
+    url: examples/solve-start-conversation-example.json
+  - type: Examples
+    url: examples/solve-continue-conversation-example.json
+  - type: Examples
+    url: examples/solve-metadata-example.json
+  - type: Documentation
+    url: >-
+      https://support.forethought.ai/hc/en-us/articles/26701042038419-Triage-API-Guide-for-Users
+  - type: JSONSchema
+    url: json-schema/forethought-triage-prediction-schema.json
+  - type: JSONStructure
+    url: json-structure/forethought-triage-prediction-structure.json
+  - type: Examples
+    url: examples/triage-predict-example.json
+- aid: forethought:forethought-predictions-api
+  name: Forethought Predictions API
+  description: Predict labels for customer-support tickets.
+  humanURL: >-
+    https://support.forethought.ai/hc/en-us/articles/31636750750227-Solve-API-Developer-Reference
+  tags:
+  - Predictions
+  properties:
+  - type: OpenAPI
+    url: openapi/forethought-predictions-api-openapi.yml
+  - type: Documentation
+    url: >-
+      https://support.forethought.ai/hc/en-us/articles/31636750750227-Solve-API-Developer-Reference
+  - type: JSONSchema
+    url: json-schema/forethought-conversation-schema.json
+  - type: JSONSchema
+    url: json-schema/forethought-context-variable-schema.json
+  - type: JSONStructure
+    url: json-structure/forethought-conversation-structure.json
+  - type: JSONLD
+    url: json-ld/forethought-context.jsonld
+  - type: Examples
+    url: examples/solve-start-conversation-example.json
+  - type: Examples
+    url: examples/solve-continue-conversation-example.json
+  - type: Examples
+    url: examples/solve-metadata-example.json
+  - type: Documentation
+    url: >-
+      https://support.forethought.ai/hc/en-us/articles/26701042038419-Triage-API-Guide-for-Users
+  - type: JSONSchema
+    url: json-schema/forethought-triage-prediction-schema.json
+  - type: JSONStructure
+    url: json-structure/forethought-triage-prediction-structure.json
+  - type: Examples
+    url: examples/triage-predict-example.json
 common:
   - type: AgenticAccess
     url: agentic-access/forethought-agentic-access.yml
