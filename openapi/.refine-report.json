@@ -1,0 +1,18 @@
+{
+  "provider": "forethought",
+  "sources": [
+    "forethought-conversations-api-openapi.yml",
+    "forethought-metadata-api-openapi.yml",
+    "forethought-predictions-api-openapi.yml"
+  ],
+  "outputs": [
+    "forethought-conversations-api-openapi.yml",
+    "forethought-metadata-api-openapi.yml",
+    "forethought-predictions-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
