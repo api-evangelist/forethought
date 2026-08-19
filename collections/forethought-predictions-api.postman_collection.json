@@ -1,0 +1,286 @@
+{
+  "item": [
+    {
+      "id": "1a6af7e9-7b51-4759-bf0d-6796a76896a2",
+      "name": "Predictions",
+      "description": {
+        "content": "Predict labels for customer-support tickets.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "31ebd8d2-00b6-49ca-aeb8-dda486f76737",
+          "name": "Predict Ticket Triage Labels",
+          "request": {
+            "name": "Predict Ticket Triage Labels",
+            "description": {
+              "content": "Submit a ticket subject and body and receive ranked predictions from a\nForethought Triage model. Each prediction includes a `prediction_value`\n(the label) and `prediction_confidence` (0.0 to 1.0). Use the top\nprediction to route tickets, populate ticket fields, or trigger\ndownstream workflows in Zendesk, Salesforce, or other helpdesks.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "api",
+                "predict"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"model_name\": \"<string>\",\n  \"text_a\": \"<string>\",\n  \"text_b\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "e7805104-61d0-49f7-953a-b3b5b57b63e9",
+              "name": "Predictions returned successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "predict"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model_name\": \"<string>\",\n  \"text_a\": \"<string>\",\n  \"text_b\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"model_name\": \"string\",\n  \"prediction_confidence\": 0.3781991701349843,\n  \"top_predictions\": [\n    {\n      \"prediction_value\": \"string\",\n      \"prediction_confidence\": 0.2695617535570499\n    },\n    {\n      \"prediction_value\": \"string\",\n      \"prediction_confidence\": 0.7834862781654052\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "9a8a903d-6c91-45fb-a6d4-a096223b3a69",
+              "name": "Missing or invalid bearer token.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "predict"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model_name\": \"<string>\",\n  \"text_a\": \"<string>\",\n  \"text_b\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "21e17f19-e9bc-4139-91a6-6133e23f2f8a",
+              "name": "Triage model not found.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "predict"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model_name\": \"<string>\",\n  \"text_a\": \"<string>\",\n  \"text_b\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Not Found",
+              "code": 404,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            },
+            {
+              "id": "981f4af4-586a-4ad3-bdd8-ab89733763ca",
+              "name": "Request rate limit exceeded.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "api",
+                    "predict"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"model_name\": \"<string>\",\n  \"text_a\": \"<string>\",\n  \"text_b\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "Too Many Requests",
+              "code": 429,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://app.forethought.ai",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "700a053f-9f0b-436b-bc2e-61fca79d9ef2",
+    "name": "Forethought Solve Conversations Predictions API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Forethought Solve API is a headless interface to the Solve generative AI\ncustomer support agent. Embed Solve into any application by starting a\nconversation with a free-form customer query, then continuing the\nconversation with additional turns or context variables. The metadata\nendpoint returns the workspace's configured context variables so clients\ncan pass the correct values when triggering Autoflows and workflows.\n\nThe Solve API is part of Forethought's Headless channel and is available on\nthe Enterprise plan. SupportGPT, Forethought's generative AI engine, powers\nresponse generation, Autoflows, knowledge-base gap detection, and\narticle-creation behind the API.\n\n\nContact Support:\n Name: Forethought Support",
+      "type": "text/plain"
+    }
+  }
+}

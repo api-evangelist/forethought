@@ -1,0 +1,167 @@
+{
+  "item": [
+    {
+      "id": "cfe569c9-9bf6-4886-ae30-58a489a8e412",
+      "name": "Metadata",
+      "description": {
+        "content": "Inspect workspace-level Solve configuration.",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "4bba86bf-31c4-43c5-81ab-fc00a3d9acf0",
+          "name": "List Solve Workspace Metadata",
+          "request": {
+            "name": "List Solve Workspace Metadata",
+            "description": {
+              "content": "Return the workspace's Solve configuration including the list of\ndefined context variables (both predefined and customer-defined) with\nID, display name, and type. Use these IDs when passing context to the\nconversation endpoints.\n",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "solve",
+                "api",
+                "v1",
+                "metadata"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a15ee71f-6a4f-4889-9138-fc6d0837c625",
+              "name": "Metadata returned successfully.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "solve",
+                    "api",
+                    "v1",
+                    "metadata"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "body": "{\n  \"context_variables\": [\n    {\n      \"context_variable_id\": \"string\",\n      \"display_name\": \"string\",\n      \"is_predefined\": false,\n      \"context_variable_type\": \"number\"\n    },\n    {\n      \"context_variable_id\": \"string\",\n      \"display_name\": \"string\",\n      \"is_predefined\": false,\n      \"context_variable_type\": \"string\"\n    }\n  ]\n}",
+              "cookie": [],
+              "_postman_previewlanguage": "json"
+            },
+            {
+              "id": "88c6db23-56d8-412a-b366-213c2fff1bc2",
+              "name": "Missing or invalid bearer token.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "solve",
+                    "api",
+                    "v1",
+                    "metadata"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: bearer",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://app.forethought.ai",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "608ab1f2-729b-4cf5-80eb-e0caff016ad3",
+    "name": "Forethought Solve Conversations Metadata API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Forethought Solve API is a headless interface to the Solve generative AI\ncustomer support agent. Embed Solve into any application by starting a\nconversation with a free-form customer query, then continuing the\nconversation with additional turns or context variables. The metadata\nendpoint returns the workspace's configured context variables so clients\ncan pass the correct values when triggering Autoflows and workflows.\n\nThe Solve API is part of Forethought's Headless channel and is available on\nthe Enterprise plan. SupportGPT, Forethought's generative AI engine, powers\nresponse generation, Autoflows, knowledge-base gap detection, and\narticle-creation behind the API.\n\n\nContact Support:\n Name: Forethought Support",
+      "type": "text/plain"
+    }
+  }
+}
