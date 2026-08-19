@@ -42,7 +42,7 @@ accessModel:
   method: derived
 created: '2026-05-24'
 modified: '2026-05-24'
-specificationVersion: '0.20'
+specificationVersion: '0.23'
 kind: contract
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/forethought.png
 access: 3rd-Party
