@@ -1,9 +1,8 @@
 {
   "provider": "forethought",
   "sources": [
-    "forethought-conversations-api-openapi.yml",
-    "forethought-metadata-api-openapi.yml",
-    "forethought-predictions-api-openapi.yml"
+    "_original/forethought-solve-api-openapi.yml",
+    "_original/forethought-triage-api-openapi.yml"
   ],
   "outputs": [
     "forethought-conversations-api-openapi.yml",
@@ -13,6 +12,14 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (2 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "forethought-solve-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "forethought-triage-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0"
+  ],
+  "skipped": [
+    "forethought-conversations-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "forethought-metadata-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "forethought-predictions-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

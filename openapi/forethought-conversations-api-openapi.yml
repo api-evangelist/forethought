@@ -1,4 +1,4 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
   title: Forethought Solve Conversations API
   description: 'The Forethought Solve API is a headless interface to the Solve generative AI
@@ -113,6 +113,16 @@ paths:
           $ref: '#/components/responses/RateLimited'
 components:
   schemas:
+    ContinueConversationRequest:
+      type: object
+      properties:
+        query:
+          type: string
+          description: The customer's next free-form query.
+        context_variables:
+          type: object
+          additionalProperties: true
+          description: Updated context variables for the conversation.
     ConversationResponse:
       type: object
       properties:
@@ -129,16 +139,6 @@ components:
           type: string
         intent:
           type: string
-    ContinueConversationRequest:
-      type: object
-      properties:
-        query:
-          type: string
-          description: The customer's next free-form query.
-        context_variables:
-          type: object
-          additionalProperties: true
-          description: Updated context variables for the conversation.
     StartConversationRequest:
       type: object
       required:

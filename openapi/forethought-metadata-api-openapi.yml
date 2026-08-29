@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Forethought Solve Conversations Metadata API
+  title: Forethought Solve Metadata API
   description: 'The Forethought Solve API is a headless interface to the Solve generative AI
 
     customer support agent. Embed Solve into any application by starting a
@@ -64,13 +64,6 @@ paths:
           $ref: '#/components/responses/Unauthorized'
 components:
   schemas:
-    MetadataResponse:
-      type: object
-      properties:
-        context_variables:
-          type: array
-          items:
-            $ref: '#/components/schemas/ContextVariable'
     ContextVariable:
       type: object
       properties:
@@ -88,6 +81,13 @@ components:
           - boolean
           - list
           - object
+    MetadataResponse:
+      type: object
+      properties:
+        context_variables:
+          type: array
+          items:
+            $ref: '#/components/schemas/ContextVariable'
   responses:
     Unauthorized:
       description: Missing or invalid bearer token.
