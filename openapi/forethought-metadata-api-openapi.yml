@@ -3,26 +3,7 @@ info:
   title: Forethought Solve Metadata API
   description: 'The Forethought Solve API is a headless interface to the Solve generative AI
 
-    customer support agent. Embed Solve into any application by starting a
-
-    conversation with a free-form customer query, then continuing the
-
-    conversation with additional turns or context variables. The metadata
-
-    endpoint returns the workspace''s configured context variables so clients
-
-    can pass the correct values when triggering Autoflows and workflows.
-
-
-    The Solve API is part of Forethought''s Headless channel and is available on
-
-    the Enterprise plan. SupportGPT, Forethought''s generative AI engine, powers
-
-    response generation, Autoflows, knowledge-base gap detection, and
-
-    article-creation behind the API.
-
-    '
+    customer support agent.'
   version: '2025-11-01'
   contact:
     name: Forethought Support
@@ -47,9 +28,7 @@ paths:
 
         ID, display name, and type. Use these IDs when passing context to the
 
-        conversation endpoints.
-
-        '
+        conversation endpoints.'
       operationId: getMetadata
       tags:
       - Metadata
@@ -64,6 +43,13 @@ paths:
           $ref: '#/components/responses/Unauthorized'
 components:
   schemas:
+    MetadataResponse:
+      type: object
+      properties:
+        context_variables:
+          type: array
+          items:
+            $ref: '#/components/schemas/ContextVariable'
     ContextVariable:
       type: object
       properties:
@@ -81,13 +67,6 @@ components:
           - boolean
           - list
           - object
-    MetadataResponse:
-      type: object
-      properties:
-        context_variables:
-          type: array
-          items:
-            $ref: '#/components/schemas/ContextVariable'
   responses:
     Unauthorized:
       description: Missing or invalid bearer token.

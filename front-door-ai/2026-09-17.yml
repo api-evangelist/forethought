@@ -1,0 +1,32 @@
+# Front Door AI Index — forethought — 2026-09-17
+# AI vocabulary counted on the provider's root page. Generated; do not edit.
+# `score` is null unless ownership is `own` — see front_door_ai.py.
+front_door_ai:
+  slug: forethought
+  lexicon_version: '1.0'
+  probed_at: '2026-09-17'
+  host: forethought.ai
+  final_host: forethought.ai
+  ownership: own
+  owner: forethought
+  shares_host_with: null
+  inherited_from: null
+  verdict: scored
+  score: 54
+  host_score: 54
+  density: 39.74
+  words: 1359
+  tiers:
+    agentic: 17
+    core: 37
+    model: 0
+  ambiguous: 28
+  top_terms:
+    AI: 36
+    agent: 27
+    AI agent: 12
+    agentic: 2
+    chatbot: 2
+    artificial intelligence: 1
+    copilot: 1
+    intelligence: 1

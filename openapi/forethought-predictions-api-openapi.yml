@@ -11,9 +11,7 @@ info:
 
     ticket subject (`text_a`) and body (`text_b`) and the API returns ranked
 
-    predictions with confidence scores.
-
-    '
+    predictions with confidence scores.'
   version: '2025-11-01'
   contact:
     name: Forethought Support
@@ -38,9 +36,7 @@ paths:
 
         prediction to route tickets, populate ticket fields, or trigger
 
-        downstream workflows in Zendesk, Salesforce, or other helpdesks.
-
-        '
+        downstream workflows in Zendesk, Salesforce, or other helpdesks.'
       operationId: predictTriage
       tags:
       - Predictions
@@ -65,20 +61,6 @@ paths:
           description: Request rate limit exceeded.
 components:
   schemas:
-    PredictResponse:
-      type: object
-      properties:
-        model_name:
-          type: string
-        prediction_confidence:
-          type: number
-          format: float
-          minimum: 0
-          maximum: 1
-        top_predictions:
-          type: array
-          items:
-            $ref: '#/components/schemas/Prediction'
     PredictRequest:
       type: object
       required:
@@ -94,6 +76,20 @@ components:
         text_b:
           type: string
           description: Ticket body or extended description.
+    PredictResponse:
+      type: object
+      properties:
+        model_name:
+          type: string
+        prediction_confidence:
+          type: number
+          format: float
+          minimum: 0
+          maximum: 1
+        top_predictions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Prediction'
     Prediction:
       type: object
       properties:
