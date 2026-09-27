@@ -15,13 +15,13 @@ description: >-
   Zendesk.
 tags:
   - Artificial Intelligence
-  - Customer-Support
+  - Customer Support
   - Customer Service
   - Generative AI
   - SupportGPT
   - Conversational AI
   - Ticket Triage
-  - Agentic AI
+  - AI Agents
   - Voice AI
   - Help Desk
   - Multi-Agent
@@ -38,6 +38,7 @@ tags_raw:
   - Voice AI
   - Helpdesk
   - Multi-Agent
+  - Customer-Support
 url: https://raw.githubusercontent.com/api-evangelist/forethought/refs/heads/main/apis.yml
 deliveryModel:
   model: saas

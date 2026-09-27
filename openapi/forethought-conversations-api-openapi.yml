@@ -90,11 +90,37 @@ paths:
           $ref: '#/components/responses/RateLimited'
 components:
   responses:
-    Unauthorized:
-      description: Missing or invalid bearer token.
     RateLimited:
       description: Request rate limit exceeded.
+    Unauthorized:
+      description: Missing or invalid bearer token.
   schemas:
+    ConversationResponse:
+      type: object
+      properties:
+        conversation_id:
+          type: string
+        response:
+          type: string
+          description: The Solve agent response text.
+        is_solved:
+          type: boolean
+        should_escalate:
+          type: boolean
+        workflow_id:
+          type: string
+        intent:
+          type: string
+    ContinueConversationRequest:
+      type: object
+      properties:
+        query:
+          type: string
+          description: The customer's next free-form query.
+        context_variables:
+          type: object
+          additionalProperties: true
+          description: Updated context variables for the conversation.
     StartConversationRequest:
       type: object
       required:
@@ -113,32 +139,6 @@ components:
         user_id:
           type: string
           description: Stable identifier for the end user.
-    ContinueConversationRequest:
-      type: object
-      properties:
-        query:
-          type: string
-          description: The customer's next free-form query.
-        context_variables:
-          type: object
-          additionalProperties: true
-          description: Updated context variables for the conversation.
-    ConversationResponse:
-      type: object
-      properties:
-        conversation_id:
-          type: string
-        response:
-          type: string
-          description: The Solve agent response text.
-        is_solved:
-          type: boolean
-        should_escalate:
-          type: boolean
-        workflow_id:
-          type: string
-        intent:
-          type: string
   securitySchemes:
     BearerAuth:
       type: http

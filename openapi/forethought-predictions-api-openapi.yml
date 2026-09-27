@@ -61,6 +61,20 @@ paths:
           description: Request rate limit exceeded.
 components:
   schemas:
+    PredictResponse:
+      type: object
+      properties:
+        model_name:
+          type: string
+        prediction_confidence:
+          type: number
+          format: float
+          minimum: 0
+          maximum: 1
+        top_predictions:
+          type: array
+          items:
+            $ref: '#/components/schemas/Prediction'
     PredictRequest:
       type: object
       required:
@@ -76,20 +90,6 @@ components:
         text_b:
           type: string
           description: Ticket body or extended description.
-    PredictResponse:
-      type: object
-      properties:
-        model_name:
-          type: string
-        prediction_confidence:
-          type: number
-          format: float
-          minimum: 0
-          maximum: 1
-        top_predictions:
-          type: array
-          items:
-            $ref: '#/components/schemas/Prediction'
     Prediction:
       type: object
       properties:
