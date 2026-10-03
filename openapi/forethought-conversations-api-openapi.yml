@@ -89,12 +89,17 @@ paths:
         '429':
           $ref: '#/components/responses/RateLimited'
 components:
-  responses:
-    RateLimited:
-      description: Request rate limit exceeded.
-    Unauthorized:
-      description: Missing or invalid bearer token.
   schemas:
+    ContinueConversationRequest:
+      type: object
+      properties:
+        query:
+          type: string
+          description: The customer's next free-form query.
+        context_variables:
+          type: object
+          additionalProperties: true
+          description: Updated context variables for the conversation.
     ConversationResponse:
       type: object
       properties:
@@ -111,16 +116,6 @@ components:
           type: string
         intent:
           type: string
-    ContinueConversationRequest:
-      type: object
-      properties:
-        query:
-          type: string
-          description: The customer's next free-form query.
-        context_variables:
-          type: object
-          additionalProperties: true
-          description: Updated context variables for the conversation.
     StartConversationRequest:
       type: object
       required:
@@ -139,6 +134,11 @@ components:
         user_id:
           type: string
           description: Stable identifier for the end user.
+  responses:
+    RateLimited:
+      description: Request rate limit exceeded.
+    Unauthorized:
+      description: Missing or invalid bearer token.
   securitySchemes:
     BearerAuth:
       type: http

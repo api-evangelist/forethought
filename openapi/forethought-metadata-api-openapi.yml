@@ -42,9 +42,6 @@ paths:
         '401':
           $ref: '#/components/responses/Unauthorized'
 components:
-  responses:
-    Unauthorized:
-      description: Missing or invalid bearer token.
   schemas:
     ContextVariable:
       type: object
@@ -70,6 +67,9 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/ContextVariable'
+  responses:
+    Unauthorized:
+      description: Missing or invalid bearer token.
   securitySchemes:
     BearerAuth:
       type: http
