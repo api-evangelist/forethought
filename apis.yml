@@ -182,6 +182,9 @@ apis:
   - type: Examples
     url: examples/triage-predict-example.json
 common:
+  - type: CapabilityMap
+    url: capabilities/forethought-capability-edges.yml
+    name: Forethought Business Capability Map
   - type: AgenticAccess
     url: agentic-access/forethought-agentic-access.yml
   - type: TrustCenter

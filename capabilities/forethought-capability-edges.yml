@@ -1,0 +1,37 @@
+slug: forethought
+provider: Forethought
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 2
+edges:
+- tag: Conversations
+  spec_file: forethought-conversations-api-openapi.yml
+  capability_id: BC-430.10
+  capability_id_l1: BC-430
+  capability_name: Customer Inquiry Management
+  confidence: 0.85
+  evidence: POST /solve/api/v1/conversation startConversation 'Start A Solve Conversation'; 'headless
+    interface to the Solve generative AI customer support agent'
+  reason: Operations start and continue AI customer-support conversations that resolve inbound customer
+    contacts, which realises Customer Service Management / inquiry handling. Some ambiguity vs self-service
+    (BC-430.40), but inbound contact resolution is the core.
+- tag: Predictions
+  spec_file: forethought-predictions-api-openapi.yml
+  capability_id: BC-430.10
+  capability_id_l1: BC-430
+  capability_name: Customer Inquiry Management
+  confidence: 0.8
+  evidence: '''classifies customer-support tickets and predicts the most likely category, sub-category,
+    language, sentiment''; POST /api/predict ''Predict Ticket Triage Labels'''
+  reason: Ticket classification and routing of inbound support contacts is Customer Inquiry Management
+    (routing). An AI-model reading (BC-610.60) is possible but the API only consumes a trained model to
+    triage tickets, so the service capability is the better fit; hence 0.8 not higher.
