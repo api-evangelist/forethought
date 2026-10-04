@@ -90,16 +90,6 @@ paths:
           $ref: '#/components/responses/RateLimited'
 components:
   schemas:
-    ContinueConversationRequest:
-      type: object
-      properties:
-        query:
-          type: string
-          description: The customer's next free-form query.
-        context_variables:
-          type: object
-          additionalProperties: true
-          description: Updated context variables for the conversation.
     ConversationResponse:
       type: object
       properties:
@@ -134,11 +124,21 @@ components:
         user_id:
           type: string
           description: Stable identifier for the end user.
+    ContinueConversationRequest:
+      type: object
+      properties:
+        query:
+          type: string
+          description: The customer's next free-form query.
+        context_variables:
+          type: object
+          additionalProperties: true
+          description: Updated context variables for the conversation.
   responses:
-    RateLimited:
-      description: Request rate limit exceeded.
     Unauthorized:
       description: Missing or invalid bearer token.
+    RateLimited:
+      description: Request rate limit exceeded.
   securitySchemes:
     BearerAuth:
       type: http

@@ -75,6 +75,17 @@ components:
           type: array
           items:
             $ref: '#/components/schemas/Prediction'
+    Prediction:
+      type: object
+      properties:
+        prediction_value:
+          type: string
+          description: The predicted label.
+        prediction_confidence:
+          type: number
+          format: float
+          minimum: 0
+          maximum: 1
     PredictRequest:
       type: object
       required:
@@ -90,17 +101,6 @@ components:
         text_b:
           type: string
           description: Ticket body or extended description.
-    Prediction:
-      type: object
-      properties:
-        prediction_value:
-          type: string
-          description: The predicted label.
-        prediction_confidence:
-          type: number
-          format: float
-          minimum: 0
-          maximum: 1
   securitySchemes:
     BearerAuth:
       type: http
