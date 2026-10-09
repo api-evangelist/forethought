@@ -1,3 +1,8 @@
+# Provenance stamped 2026-10-07 (roadmap#943): written by an API Evangelist sweep (dated 2026-05-24 by the file itself), not
+# harvested from the provider. `method: generated` so the economics campaign may replace it with a
+# dated, verbatim transcription; every figure below is unverified until it does.
+method: generated
+generated: '2026-05-24'
 specification: API Commons Plans
 specificationVersion: '0.1'
 schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main/schema/api-commons.yml#/$defs/Plans
@@ -141,3 +146,60 @@ plans:
     elements:
       - name: Company knowledge-base access from Slack
       - name: Department enablement
+x-canonical:
+  generated: '2026-10-08'
+  vocabulary: all/0-working/economics/plans-canonical.yml
+  models:
+  - negotiated
+  - tiered
+  units:
+  - active-user
+  plans:
+  - name: Basic
+    access: other
+    model: tiered
+    model_how: stated
+    units:
+    - active-user
+    periods:
+    - month
+  - name: Professional
+    access: other
+    model: tiered
+    model_how: stated
+    units:
+    - active-user
+    periods:
+    - month
+  - name: Enterprise
+    access: other
+    model: tiered
+    model_how: stated
+    units:
+    - active-user
+    periods:
+    - month
+  - name: Assist (Add-On)
+    access: addon
+    model: negotiated
+    model_how: derived
+    units:
+    - active-user
+    periods:
+    - month
+  - name: Agent QA (Add-On)
+    access: addon
+    model: negotiated
+    model_how: derived
+    units:
+    - active-user
+    periods:
+    - month
+  - name: Forethought for Slack (Add-On)
+    access: addon
+    model: negotiated
+    model_how: derived
+    units:
+    - active-user
+    periods:
+    - month
