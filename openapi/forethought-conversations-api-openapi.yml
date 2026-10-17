@@ -90,22 +90,6 @@ paths:
           $ref: '#/components/responses/RateLimited'
 components:
   schemas:
-    ConversationResponse:
-      type: object
-      properties:
-        conversation_id:
-          type: string
-        response:
-          type: string
-          description: The Solve agent response text.
-        is_solved:
-          type: boolean
-        should_escalate:
-          type: boolean
-        workflow_id:
-          type: string
-        intent:
-          type: string
     StartConversationRequest:
       type: object
       required:
@@ -134,11 +118,27 @@ components:
           type: object
           additionalProperties: true
           description: Updated context variables for the conversation.
+    ConversationResponse:
+      type: object
+      properties:
+        conversation_id:
+          type: string
+        response:
+          type: string
+          description: The Solve agent response text.
+        is_solved:
+          type: boolean
+        should_escalate:
+          type: boolean
+        workflow_id:
+          type: string
+        intent:
+          type: string
   responses:
-    Unauthorized:
-      description: Missing or invalid bearer token.
     RateLimited:
       description: Request rate limit exceeded.
+    Unauthorized:
+      description: Missing or invalid bearer token.
   securitySchemes:
     BearerAuth:
       type: http
