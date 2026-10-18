@@ -40,5 +40,5 @@
     - connectors/applications/forethought
     vendor_link: https://forethought.ai/
     builder: Fivetran
-  status: pending-generation
+  status: not-a-workflow
   arazzo: null
