@@ -4,6 +4,8 @@ checked:
 - https://fivetran.com/docs-sitemap.xml
 - https://fivetran.com/docs/connectors/partner-built-program
 - okta/integrations/okta-integration-edges.yml
+- talkdesk/integrations/talkdesk-integration-edges.yml
+- zendesk/integrations/zendesk-integration-edges.yml
 source:
 - okta/integrations/okta-integration-edges.yml
 edges:
@@ -57,3 +59,36 @@ edges:
     builder: Fivetran
   detected_by: sweep-data-integration.py
   first_seen: '2026-10-18'
+- partner_name: Talkdesk (own)
+  partner: talkdesk
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://appconnect.talkdesk.com/apps/forethought-assist
+  mirror_of: talkdesk/integrations/talkdesk-integration-edges.yml
+  apps:
+  - Forethought Assist
+  listing_count: 1
+  detected: '2026-10-19'
+  detected_by: mirror-platform-listings.py
+- partner_name: Zendesk (own)
+  partner: zendesk
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://www.zendesk.com/marketplace/apps/support/173496/forethought-assist/
+  mirror_of: zendesk/integrations/zendesk-integration-edges.yml
+  apps:
+  - Forethought Assist
+  listing_count: 1
+  detected: '2026-10-19'
+  detected_by: mirror-platform-listings.py
+  category: AI and Bots

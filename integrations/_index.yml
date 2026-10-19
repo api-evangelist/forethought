@@ -42,3 +42,28 @@
     builder: Fivetran
   status: not-a-workflow
   arazzo: null
+- slug: forethought-talkdesk-own
+  label: Talkdesk (own)
+  partner: talkdesk
+  partner_name: Talkdesk (own)
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://appconnect.talkdesk.com/apps/forethought-assist
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: forethought-zendesk-own
+  label: Zendesk (own)
+  partner: zendesk
+  partner_name: Zendesk (own)
+  category: AI and Bots
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.zendesk.com/marketplace/apps/support/173496/forethought-assist/
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
