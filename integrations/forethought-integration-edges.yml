@@ -13,6 +13,7 @@ checked:
 - https://developer.salesforce.com/docs/atlas.en-us.packagingGuide.meta/packagingGuide/security_review_overview.htm
 - https://slack.com/marketplace
 - salesforce/integrations/salesforce-integration-edges.yml
+- intercom/integrations/intercom-integration-edges.yml
 source:
 - okta/integrations/okta-integration-edges.yml
 edges:
@@ -153,3 +154,20 @@ edges:
   detected: '2026-10-21'
   detected_by: mirror-platform-listings.py
   category: agentProductivity
+- partner_name: Intercom (own)
+  partner: intercom
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://www.intercom.com/app-store/?app_package_code=forethought-10nv
+  mirror_of: intercom/integrations/intercom-integration-edges.yml
+  apps:
+  - Forethought
+  listing_count: 1
+  detected: '2026-10-23'
+  detected_by: mirror-platform-listings.py
+  category: Intercom App Store app

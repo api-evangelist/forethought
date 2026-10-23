@@ -118,3 +118,16 @@
   relationship: platform-app
   status: not-a-workflow
   arazzo: null
+- slug: forethought-intercom-own
+  label: Intercom (own)
+  partner: intercom
+  partner_name: Intercom (own)
+  category: Intercom App Store app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.intercom.com/app-store/?app_package_code=forethought-10nv
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
