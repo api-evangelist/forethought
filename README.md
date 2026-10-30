@@ -1,4 +1,4 @@
-# Forethought (forethought)
+# Forethought
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,116 +66,166 @@
 
 Forethought is a San Francisco-based generative AI customer-support platform. Its multi-agent product suite — Solve (omnichannel resolution), Triage (ticket classification and routing), Discover (knowledge-gap detection and article generation), Assist (agentic copilot for human agents), and Agent QA (automated quality scoring) — is powered by SupportGPT, Forethought's fine-tuned generative AI engine. The platform supports chat, email, voice, Slack, mobile, and a Headless API channel, and integrates with Zendesk, Salesforce, Intercom, Front, Gorgias, Genesys, Five9, LiveChat, and knowledge sources including Notion, Document360, and Stonly. Forethought exposes two public REST APIs on the Enterprise plan: the Solve API (https://app.forethought.ai/solve/api/v1) for starting and continuing AI conversations and inspecting workspace context variables, and the Triage API (https://api.forethought.ai/api/predict) for classifying tickets against customer-trained models. Public iOS and Android SDKs (Forethought- Technologies/solve-ios, solve-android) embed Solve into mobile apps. The Forethought engineering team also maintains AutoChain, an open-source lightweight framework for building and testing LLM agents. Forethought is now part of Zendesk.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/forethought/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/forethought/refs/heads/main/apis.yml)
+**Areas:** Artificial Intelligence · Customer Service · Generative AI · SupportGPT · Conversational AI · Ticket Triage · AI Agents · Voice AI · Help Desk · Multi-Agent
 
-## Scope
+## Forethought on APIs.io
 
-- **Position:** Consuming
-- **Access:** 3rd-Party
+Everything profiled for Forethought is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/forethought/](https://apis.io/providers/forethought/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (3)
 
-- AI
-- Artificial Intelligence
-- Customer Support
-- Customer Service
-- Generative AI
-- SupportGPT
-- Conversational AI
-- Ticket Triage
-- Agentic AI
-- Voice AI
-- Helpdesk
-- Multi-Agent
+- [Forethought Conversations API](https://apis.io/apis/forethought/forethought-conversations-api/) — Start and continue Solve conversations.
+- [Forethought Metadata API](https://apis.io/apis/forethought/forethought-metadata-api/) — Inspect workspace-level Solve configuration.
+- [Forethought Predictions API](https://apis.io/apis/forethought/forethought-predictions-api/) — Predict labels for customer-support tickets.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2026-05-24
-- **Modified:** 2026-05-24
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Forethought Solve API
+Which operations an agent can call, which act, and which need a human in the loop.
 
-Headless REST API for the Solve omnichannel AI agent. Start a conversation with a free-form customer query, continue the conversation with additional turns or context-variable updates, and inspect the workspace's defined context variables. Bearer-token authenticated against app.forethought.ai/solve/api/v1.
+- [Forethought Agentic Access](https://apis.io/agentic-access/forethought/forethought-agentic-access/)
 
-- **Human URL:** [https://support.forethought.ai/hc/en-us/articles/31636750750227-Solve-API-Developer-Reference](https://support.forethought.ai/hc/en-us/articles/31636750750227-Solve-API-Developer-Reference)
+#### JSON Schema (3)
 
-#### Tags
+The data models the API reads and writes.
 
-- AI
-- Customer Support
-- Solve
-- Conversations
-- Headless
+- [Forethought Solve Context Variable](https://apis.io/schemas/forethought/forethought-context-variable/)
+- [Forethought Solve Conversation](https://apis.io/schemas/forethought/forethought-conversation/)
+- [Forethought Triage Prediction](https://apis.io/schemas/forethought/forethought-triage-prediction/)
 
-#### Properties
+#### JSON Structure (2)
 
-- [Documentation](https://support.forethought.ai/hc/en-us/articles/31636750750227-Solve-API-Developer-Reference)
-- [OpenAPI](openapi/forethought-solve-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/forethought-solve-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/forethought-solve-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [JSON Schema](json-schema/forethought-conversation-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Schema](json-schema/forethought-context-variable-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Structure](json-structure/forethought-conversation-structure.json)
-- [JSON-LD](json-ld/forethought-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
-- [Example](examples/solve-start-conversation-example.json)
-- [Example](examples/solve-continue-conversation-example.json)
-- [Example](examples/solve-metadata-example.json)
+Data models expressed in JSON Structure.
 
-### Forethought Triage API
+- [Forethought Conversation Structure](https://apis.io/json-structure/forethought/forethought-conversation-structure/)
+- [Forethought Triage Prediction Structure](https://apis.io/json-structure/forethought/forethought-triage-prediction-structure/)
 
-REST API for the Triage agent. POST a ticket subject (text_a) and body (text_b) plus the model_name issued by Forethought, and receive ranked predictions with confidence scores. Use to drive ticket routing, auto-populated ticket fields, language detection, sentiment, or other customer-trained labels.
+#### JSON-LD (1)
 
-- **Human URL:** [https://support.forethought.ai/hc/en-us/articles/26701042038419-Triage-API-Guide-for-Users](https://support.forethought.ai/hc/en-us/articles/26701042038419-Triage-API-Guide-for-Users)
+Linked-data contexts for the provider's vocabulary.
 
-#### Tags
+- [Forethought Context](https://apis.io/jsonld/forethought/forethought-context/)
 
-- AI
-- Customer Support
-- Triage
-- Classification
-- Predictions
+#### Vocabulary (1)
 
-#### Properties
+The provider's domain terms, defined.
 
-- [Documentation](https://support.forethought.ai/hc/en-us/articles/26701042038419-Triage-API-Guide-for-Users)
-- [OpenAPI](openapi/forethought-triage-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/forethought-triage-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/forethought-triage-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
-- [JSON Schema](json-schema/forethought-triage-prediction-schema.json) — [JSON Schema](https://json-schema.org/specification)
-- [JSON Structure](json-structure/forethought-triage-prediction-structure.json)
-- [JSON-LD](json-ld/forethought-context.jsonld) — [JSON-LD](https://www.w3.org/TR/json-ld11/)
-- [Example](examples/triage-predict-example.json)
+- [Forethought Vocabulary](https://apis.io/vocabularies/forethought/forethought-vocabulary/)
 
-## Common Properties
+#### Examples (4)
+
+Example requests and responses.
+
+- [Solve Continue Conversation Example](https://apis.io/examples/forethought/solve-continue-conversation-example/)
+- [Solve Metadata Example](https://apis.io/examples/forethought/solve-metadata-example/)
+- [Solve Start Conversation Example](https://apis.io/examples/forethought/solve-start-conversation-example/)
+- [Triage Predict Example](https://apis.io/examples/forethought/triage-predict-example/)
+
+#### Collections (5)
+
+Postman and Open Collection request collections.
+
+- [Forethought Solve Conversations API](https://apis.io/collections/forethought/open-forethought-conversations-api/)
+- [Forethought Solve Conversations Metadata API](https://apis.io/collections/forethought/open-forethought-metadata-api/)
+- [Forethought Solve Conversations Predictions API](https://apis.io/collections/forethought/open-forethought-predictions-api/)
+- [Forethought Solve API](https://apis.io/collections/forethought/open-forethought-solve-api/)
+- [Forethought Triage API](https://apis.io/collections/forethought/open-forethought-triage-api/)
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [Forethought — jsonschema rules](https://apis.io/rules/forethought/forethought-jsonschema-spectral-rules/)
+- [Forethought API Rules](https://apis.io/rules/forethought/forethought-rules/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Forethought Authentication](https://apis.io/security/forethought/forethought-authentication/)
+- [Forethought Domain Security](https://apis.io/security/forethought/forethought-domain-security/)
+- [Forethought Trust Center](https://apis.io/security/forethought/forethought-trust-center/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Forethought Plans Pricing](https://apis.io/plans/forethought/forethought-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Forethought Rate Limits](https://apis.io/rate-limits/forethought/forethought-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Forethought Finops](https://apis.io/finops/forethought/forethought-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
 
 - [Website](https://forethought.ai)
-- [Portal](https://forethought.ai/platform)
 - [Documentation](https://support.forethought.ai/hc/en-us)
-- [Documentation](https://support.forethought.ai/hc/en-us/articles/31636750750227-Solve-API-Developer-Reference)
-- [Documentation](https://support.forethought.ai/hc/en-us/articles/26701042038419-Triage-API-Guide-for-Users)
 - [Pricing](https://forethought.ai/pricing)
-- [Plans](plans/forethought-plans-pricing.yml)
-- [Rate Limits](rate-limits/forethought-rate-limits.yml)
-- [Fin Ops](finops/forethought-finops.yml)
 - [Blog](https://forethought.ai/resource-center)
-- [Blog](https://engineering.forethought.ai/blog/)
-- [Careers](https://forethought.ai/careers)
-- [Contact](https://forethought.ai/contact-us)
-- [LinkedIn](https://www.linkedin.com/company/forethought-ai)
-- [Twitter](https://twitter.com/forethought_ai)
-- [GitHub Organization](https://github.com/Forethought-Technologies)
-- [SDK](https://github.com/Forethought-Technologies/solve-ios)
-- [SDK](https://github.com/Forethought-Technologies/solve-android)
-- [Tool](https://github.com/Forethought-Technologies/AutoChain)
-- [Documentation](https://autochain.forethought.ai)
-- [Integrations](https://forethought.ai/platform)
-- [Channels](undefined)
-- [Customers](undefined)
-- [Features](undefined)
+- [GitHub](https://github.com/Forethought-Technologies)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 38.3** — thin · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 64.3 |
+| Contract governance | 13.6 |
+| Operational transparency | 2.6 |
+| Developer ergonomics | 40.5 |
+| Access clarity | 34.2 |
+
+**Agent readiness 19.2** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | documented (partial credit) |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 20.0** — AI & Biometrics
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/forethought/](https://apis.io/providers/forethought/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Forethought: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/forethought/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
